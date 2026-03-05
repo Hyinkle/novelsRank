@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小说评级 · 展板</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 可选字体，仅用于美化 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <span class="icon">📚</span> 小说个人向评级
+        </h1>
+        <p class="subtitle">
+            <span class="rating-tags">夯 · 优秀 · 良好 · 还行 · 拉</span>
+            <span class="total-books">总本书：<span id="total-count">0</span></span>
+        </p>
+
+        <div class="table-wrapper">
+            <table class="rating-table">
+                <colgroup>
+                    <col class="rating-col">
+                    <col class="books-col">
+                </colgroup>
+                <tbody id="rating-table-body">
+                    <!-- 动态由 JavaScript 渲染 -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="data-source">
+            ⚡ 数据来源：<code>Hink</code>（手动维护）
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

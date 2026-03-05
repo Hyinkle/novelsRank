@@ -1,0 +1,195 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: linear-gradient(145deg, #f1f5f9 0%, #e4eaf1 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.container {
+    max-width: 1200px;  /* 加宽以容纳更多列 */
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 2rem 2rem 2.5rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.3rem;
+    color: #1e293b;
+}
+
+.icon {
+    font-size: 2rem;
+    background: #fef3c7;
+    padding: 0.5rem;
+    border-radius: 1.2rem;
+}
+
+.subtitle {
+    color: #475569;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    border-bottom: 2px dashed #cbd5e1;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-books {
+    font-weight: 600;
+    color: #1e293b;
+    background: #ffffffb0;
+    padding: 0.2rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    border: 1px solid #e2e8f0;
+}
+
+/* 表格设计 */
+.table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+}
+
+.rating-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    table-layout: fixed;
+}
+
+.rating-col {
+    width: 130px;
+}
+
+.books-col {
+    width: 720px;  /* 增加到680px，以适应6列布局 */
+}
+
+.rating-table td {
+    padding: 1rem 1.2rem;
+    background-color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    vertical-align: top;
+}
+
+/* 第一列：评级名称 + 背景色 */
+.rating-table td:first-child {
+    font-weight: 700;
+    font-size: 1.25rem;
+    border-radius: 20px 0 0 20px;
+    color: white;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    vertical-align: middle;
+    border-right: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+/* 五行独立背景色 */
+.rating-table tr:nth-child(1) td:first-child { background-color: #b91c1c; } /* 夯 */
+.rating-table tr:nth-child(2) td:first-child { background-color: #b45309; } /* 优秀 */
+.rating-table tr:nth-child(3) td:first-child { background-color: #047857; } /* 良好 */
+.rating-table tr:nth-child(4) td:first-child { background-color: #6b7280; } /* 还行 */
+.rating-table tr:nth-child(5) td:first-child { background-color: #4c1d95; } /* 拉 */
+
+/* 第二列：无背景色，圆角右边缘 */
+.rating-table td:last-child {
+    background-color: transparent;
+    border-radius: 0 20px 20px 0;
+    padding: 0.8rem 1rem;
+    word-wrap: break-word;
+}
+
+/* 小说列表容器 - 网格每行最多6列 */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+}
+
+/* 单个小说条目 */
+.book-item {
+    background: white;
+    padding: 0.5rem 0.2rem; /* 原 0.4rem 0.1rem，稍增加上下留白 */
+    border-radius: 30px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f2f5;
+    color: #1e293b;
+    font-weight: 500;
+    font-size: 0.85rem;   /* 原 0.68rem，约 13.6px (默认16px基准) */
+    text-align: center;
+    word-break: break-word;    /* 允许长词折行，但9字不会折行 */
+    transition: all 0.15s;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.3;
+}
+
+.book-item:hover {
+    border-color: #cbd5e1;
+    background: #fcfcfd;
+}
+
+/* 空状态占整行 */
+.empty-books {
+    grid-column: 1 / -1;
+    color: #9ca3af;
+    font-style: italic;
+    padding: 0.6rem 0.8rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    border: 1px dashed #cbd5e1;
+}
+
+/* 数据来源标注 */
+.data-source {
+    margin-top: 1rem;
+    text-align: right;
+    color: #64748b;
+    font-size: 0.85rem;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+}
+
+.data-source code {
+    background: #eef2f6;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+}
+
+/* 响应式：小屏时适当缩小第二列宽度，但依然保持6列 */
+@media (max-width: 800px) {
+    .books-col {
+        width: 580px;
+    }
+    .book-item {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.1rem;
+    }
+}
