@@ -4,7 +4,7 @@
     { "name": "武动乾坤", "rating": "夯" },
     { "name": "大主宰", "rating": "还行" },
     { "name": "永生", "rating": "夯" },
-    { "name": "君有云", "rating": "优秀" },
+    { "name": "君有云", "rating": "良好" },
     { "name": "完美世界", "rating": "夯" },
     { "name": "百炼成神", "rating": "优秀" },
     { "name": "独步逍遥", "rating": "还行" },
@@ -29,5 +29,6 @@
     { "name": "主宰之王", "rating": "还行" },
     { "name": "神控天下", "rating": "还行" },
     { "name": "仙帝归来", "rating": "拉" },
-    { "name": "绝世武神", "rating": "良好" }
+    { "name": "绝世武神", "rating": "良好" },
+    { "name": "万妖之祖", "rating": "还行" }
 ]
